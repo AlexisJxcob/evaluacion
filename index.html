@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento y codificación de caracteres -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Artística San Sebastián</title>
+    <!-- Enlace a la hoja de estilos de Bootstrap (Framework de diseño) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Barra de navegación: 'fixed-top' la mantiene arriba, 'navbar-dark bg-dark' le da el color oscuro -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container"> 
+            <!-- Logo o nombre de la marca -->
+            <a class="navbar-brand" href="index.html">Artística San Sebastián</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"> 
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active fw-bold text-warning" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="galeria.html">Galería</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+</nav>
+
+<main class="container mt-5 pt-5">
+    <!-- Sección Hero: Introducción principal con una imagen al lado -->
+    <section class="row align-items-center py-5"> <!-- 'row' define una fila, 'align-items-center' centra el contenido verticalmente -->
+        <div class="col-md-6">
+            <h1 class="display-4">Bienvenidos a nuestra Galería</h1>
+            <p class="lead">
+                Explora la belleza y la creatividad a través de nuestra colección exclusiva de obras contemporáneas.
+            </p>
+            <a href="galeria.html" class="btn btn-primary btn-lg">Ver Colección</a>
+        </div>
+        <div class="col-md-6">
+            <img src="img/banner-inicio.png" alt="Interior de la Galería" class="img-fluid rounded shadow">
+        </div>
+    </section>
+
+    <hr> <!-- Línea divisoria -->
+
+    <!-- Sección de información dividida en 3 columnas -->
+    <section class="py-4">
+        <h2 class="text-center mb-4">Sobre Nosotros</h2> <!-- 'text-center' centra el texto, 'mb-4' añade margen abajo -->
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Nuestra Misión</h3>
+                <p>Acercar el arte a la comunidad a través de exposiciones interactivas y digitales.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Historia</h3>
+                <p>Fundada en 2024 como parte del proyecto de Tecnologías Web para el Instituto San Sebastián.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Estándares</h3>
+                <p>Diseñamos bajo estándares de diseño web responsivo y accesibilidad visual.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Pie de página con color oscuro y texto blanco -->
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2026 Taller de Tecnologías Web | IF101IINF</p>
+</footer>
+
+<!-- Scripts de Bootstrap para que funcionen los menús desplegables y otros componentes interactivos -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
