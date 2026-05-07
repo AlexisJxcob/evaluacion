@@ -1,0 +1,434 @@
+/* --- 1. VARIABLES CSS — PALETA DE 5 COLORES --- */
+:root {
+  --color-negro:      #0a0a0a;       /* Fondo principal */
+  --color-marfil:     #f5f0e8;       /* Fondo claro / texto en oscuro */
+  --color-oro:        #c9a96e;       /* Acento dorado / activo */
+  --color-gris-oscuro:#1e1e1e;       /* Navbar / footer */
+  --color-gris-medio: #6b6b6b;       /* Texto secundario */
+
+  --fuente-display:   'Cormorant Garamond', Georgia, serif;
+  --fuente-cuerpo:    'Jost', sans-serif;
+}
+
+/* --- 2. IMPORTACIÓN DE FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500&display=swap');
+
+/* --- 3. RESET Y BASE GLOBAL --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.75;              /* IE4: interlineado optimizado */
+  color: var(--color-negro);
+  background-color: var(--color-marfil);
+  letter-spacing: 0.02em;
+}
+
+/* --- 4. JERARQUÍA TIPOGRÁFICA (IE3: 3 tamaños) --- */
+
+/* Nivel 1: Títulos principales */
+h1, .titulo-principal {
+  font-family: var(--fuente-display);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+  color: var(--color-negro);
+}
+
+/* Nivel 2: Subtítulos de sección */
+h2, .titulo-seccion {
+  font-family: var(--fuente-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  color: var(--color-negro);
+}
+
+/* Nivel 3: Títulos de tarjeta */
+h3, h4, h5, .titulo-obra {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-negro);
+}
+
+/* Texto de párrafo */
+p {
+  font-size: 1rem;
+  line-height: 1.85;              /* IE4: espaciado de párrafos */
+  margin-bottom: 1.2rem;
+  color: var(--color-gris-medio);
+}
+
+/* --- 5. NAVBAR PERSONALIZADA --- */
+.navbar {
+  background-color: var(--color-gris-oscuro) !important;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.2);
+  padding: 1.2rem 0;
+}
+
+.navbar-brand {
+  font-family: var(--fuente-display);
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-marfil) !important;
+  transition: color 0.35s ease;   /* IE6: transición en nav-brand */
+}
+
+.navbar-brand:hover {
+  color: var(--color-oro) !important;
+}
+
+/* Navegación — links */
+.nav-link {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.78rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(245, 240, 232, 0.7) !important;
+  padding: 0.3rem 1.2rem !important;
+  transition: color 0.3s ease;    /* IE6: transición en enlaces */
+}
+
+.nav-link:hover {
+  color: var(--color-oro) !important;
+}
+
+/* Link activo */
+.nav-link.activo,
+.nav-link.active {
+  color: var(--color-oro) !important;
+  border-bottom: 1px solid var(--color-oro);
+}
+
+/* --- 6. SECCIÓN HERO --- */
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  background-color: var(--color-marfil);
+}
+
+.hero-texto {
+  padding-right: 3rem;
+}
+
+.hero-subtitulo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--color-oro);
+  margin-bottom: 1.5rem;
+  display: block;
+  padding-top: 1rem;
+}
+
+.hero-imagen-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-imagen-wrapper img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: grayscale(15%);
+  transition: filter 0.5s ease;
+}
+
+.hero-imagen-wrapper:hover img {
+  filter: grayscale(0%);
+}
+
+/* --- 7. LÍNEA DIVISORA DECORATIVA --- */
+.divisor-oro {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-oro);
+  margin: 2rem 0;
+}
+
+.divisor-centrado {
+  margin: 2rem auto;
+}
+
+/* --- 8. SECCIÓN SOBRE NOSOTROS --- */
+.sobre-nosotros {
+  background-color: var(--color-negro);
+  color: var(--color-marfil);
+  padding: 5rem 0;
+}
+
+.sobre-nosotros h2 {
+  color: var(--color-marfil);
+}
+
+.sobre-nosotros h3 {
+  color: var(--color-oro);
+  margin-bottom: 1rem;
+}
+
+.sobre-nosotros p {
+  color: rgba(245, 240, 232, 0.65);
+}
+
+/* --- 9. BOTÓN PERSONALIZADO --- */
+.btn-galeria {
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  padding: 1rem 2.5rem;
+  background-color: transparent;
+  color: var(--color-negro);
+  border: 1px solid var(--color-negro);
+  border-radius: 0;
+  transition: background-color 0.35s ease, color 0.35s ease;  /* IE6 */
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-galeria:hover {
+  background-color: var(--color-negro);
+  color: var(--color-marfil);
+}
+
+.btn-galeria-claro {
+  color: var(--color-marfil);
+  border-color: var(--color-marfil);
+}
+
+.btn-galeria-claro:hover {
+  background-color: var(--color-oro);
+  border-color: var(--color-oro);
+  color: var(--color-negro);
+}
+
+/* --- 10. GALERÍA — GRILLA RESPONSIVA 4 POR FILA --- */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* IL5: Responsive — 2 por fila en tablet */
+@media (max-width: 992px) {
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* IL5: Responsive — 1 por fila en móvil */
+@media (max-width: 576px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-texto {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Tarjeta de obra de arte */
+.obra-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.obra-card-imagen {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease, filter 0.4s ease;
+  filter: grayscale(20%);
+}
+
+.obra-card:hover .obra-card-imagen {
+  transform: scale(1.04);
+  filter: grayscale(0%);
+}
+
+.obra-card-info {
+  padding: 1.2rem 0 0.5rem;
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
+}
+
+.obra-card-numero {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-oro);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.obra-card-descripcion {
+  font-size: 0.85rem;
+  color: var(--color-gris-medio);
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+/* --- 11. ENCABEZADO DE PÁGINA --- */
+.page-header {
+  padding: 7rem 0 4rem;
+  text-align: center;
+  background-color: var(--color-marfil);
+}
+
+.page-header-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--color-oro);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* --- 12. FORMULARIO PERSONALIZADO --- */
+.form-wrapper {
+  background-color: #fff;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  padding: 3rem;
+}
+
+.form-label-custom {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-negro);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.form-campo {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.2);
+  border-radius: 0;
+  padding: 0.7rem 0;
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-negro);
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;    /* IE6: transición en campos */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-campo:focus {
+  border-bottom-color: var(--color-oro);
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.form-campo::placeholder {
+  color: rgba(107, 107, 107, 0.5);
+  font-weight: 300;
+}
+
+.form-grupo {
+  margin-bottom: 2rem;
+}
+
+/* --- 13. INFORMACIÓN DE CONTACTO --- */
+.contacto-info {
+  padding: 2rem;
+  background-color: var(--color-negro);
+  color: var(--color-marfil);
+  height: 100%;
+}
+
+.contacto-info h3 {
+  color: var(--color-oro);
+  margin-bottom: 2rem;
+}
+
+.contacto-detalle {
+  margin-bottom: 1.5rem;
+}
+
+.contacto-detalle-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--color-oro);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.contacto-detalle-valor {
+  font-size: 0.95rem;
+  color: rgba(245, 240, 232, 0.8);
+  margin-bottom: 0;
+}
+
+/* --- 14. FOOTER --- */
+.footer-personalizado {
+  background-color: var(--color-gris-oscuro);
+  color: rgba(245, 240, 232, 0.5);
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.footer-brand {
+  font-family: var(--fuente-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--color-marfil);
+}
+
+.footer-texto {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: rgba(245, 240, 232, 0.4);
+  margin-bottom: 0;
+}
+
+/* --- 15. ANIMACIÓN DE ENTRADA --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in-delay-1 { animation-delay: 0.1s; }
+.fade-in-delay-2 { animation-delay: 0.25s; }
+.fade-in-delay-3 { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- 16. UTILIDADES ADICIONALES --- */
+.texto-oro       { color: var(--color-oro); }
+.texto-marfil    { color: var(--color-marfil); }
+.fondo-negro     { background-color: var(--color-negro); }
+.sin-radio       { border-radius: 0 !important; }
+.espaciado-letras { letter-spacing: 0.15em; }
